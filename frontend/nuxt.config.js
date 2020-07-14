@@ -50,8 +50,19 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: ['@nuxtjs/apollo'],
+  // Give apollo module options
+  apollo: {
+    clientConfigs: {
+      default: {
+        // required
+        httpEndpoint: 'http://localhost:4000',
+      },
+      test: {
+        httpEndpoint: 'http://localhost:5000',
+      }
+    }
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

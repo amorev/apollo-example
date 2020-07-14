@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/apollo": "4.0.1-rc.1",
+    "@types/vue-apollo": "git+https://github.com/salticus/types-vue-apollo.git#v0.0.1",
     "graphql-tag": "2.10.4",
     "nuxt": "^2.13.0"
   },
