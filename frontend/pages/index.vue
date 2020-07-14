@@ -8,29 +8,38 @@
       <div>
         static: {{ helloStatic }}<br>
         dynamic: {{ helloDynamic }}<br>
+        messages: {{ messages }}
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import gql from 'graphql-tag';
+<script>
+import Vue from 'vue'
+import gql from 'graphql-tag'
 
-export default Vue.extend({
+export default {
+  data () {
+    return {
+      messages: []
+    }
+  },
   apollo: {
-    // Simple query that will update the 'hello' vue property
-    helloDynamic: {
-      query: gql`{bye: helloTwo}`,
-      update: data => data,
-      pollInterval: 3000
-    },
-    helloStatic: {
-      query: gql`{hello}`,
-      update: data => data
-    },
+    $subscribe: {
+      newMessage: {
+        query: gql`subscription {
+  newMessage {
+    text
+    title
   }
-});
+}`,
+        result ({ data }) {
+          this.messages.push(data)
+        },
+      }
+    }
+  }
+}
 </script>
 
 <style>

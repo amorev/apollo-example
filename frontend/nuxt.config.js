@@ -56,7 +56,8 @@ export default {
     clientConfigs: {
       default: {
         // required
-        httpEndpoint: 'http://localhost:4000',
+        httpEndpoint: 'http://localhost:4000/graphql',
+        wsEndpoint: 'ws://localhost:4000/graphql'
       },
       test: {
         httpEndpoint: 'http://localhost:5000',
