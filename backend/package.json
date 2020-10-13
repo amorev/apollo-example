@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "test": "ava",
+    "dev": "nodemon data.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "latest",
+    "@apollo/client": "3.2.3",
+    "apollo-server": "2.18.2",
+    "apollo-server-testing": "2.18.2",
+    "ava": "3.13.0",
     "nodemon": "2.0.4"
   }
 }
